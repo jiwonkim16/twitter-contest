@@ -46,7 +46,10 @@ function CreateAccount() {
   };
   return (
     <>
-      <form onSubmit={onSubmit}>
+      <form
+        onSubmit={onSubmit}
+        className="flex flex-col items-center justify-center h-[50vh] gap-7"
+      >
         <input
           required
           type="email"
@@ -54,6 +57,7 @@ function CreateAccount() {
           name="email"
           placeholder="이메일을 입력하세요"
           onChange={onChange}
+          className="border text-center"
         />
         <input
           required
@@ -62,6 +66,7 @@ function CreateAccount() {
           value={nickName}
           placeholder="닉네임을 입력하세요"
           onChange={onChange}
+          className="border text-center"
         />
         <input
           required
@@ -70,8 +75,11 @@ function CreateAccount() {
           value={password}
           placeholder="비밀번호를 입력하세요"
           onChange={onChange}
+          className="border text-center"
         />
-        <button>{isLoading ? "계정 생성 중" : "계정 생성"}</button>
+        <button className="bg-[#0BA5E9] rounded-xl text-white w-[180px]">
+          {isLoading ? "계정 생성 중" : "계정 생성"}
+        </button>
       </form>
     </>
   );

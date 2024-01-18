@@ -27,7 +27,9 @@ function Layout() {
           <button>
             <Link to="/">홈</Link>
           </button>
-          <button>글쓰기</button>
+          <button>
+            <Link to="/post-tweet">글쓰기</Link>
+          </button>
           <button>
             <Link to="profile">프로필</Link>
           </button>

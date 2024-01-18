@@ -8,6 +8,7 @@ import ProtectedRoute from "./components/protected-route";
 import Profile from "./routes/profile";
 import Login from "./routes/login";
 import CreateAccount from "./routes/create-account";
+import PostTweetForm from "./components/post-tweet-form";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: "/create-account",
     element: <CreateAccount />,
+  },
+  {
+    path: "/post-tweet",
+    element: <PostTweetForm />,
   },
 ]);
 function App() {

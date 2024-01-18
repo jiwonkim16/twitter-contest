@@ -57,7 +57,7 @@ function CreateAccount() {
           name="email"
           placeholder="이메일을 입력하세요"
           onChange={onChange}
-          className="border text-center"
+          className="border text-center p-1"
         />
         <input
           required
@@ -66,7 +66,7 @@ function CreateAccount() {
           value={nickName}
           placeholder="닉네임을 입력하세요"
           onChange={onChange}
-          className="border text-center"
+          className="border text-center p-1"
         />
         <input
           required
@@ -75,9 +75,9 @@ function CreateAccount() {
           value={password}
           placeholder="비밀번호를 입력하세요"
           onChange={onChange}
-          className="border text-center"
+          className="border text-center p-1"
         />
-        <button className="bg-[#0BA5E9] rounded-xl text-white w-[180px]">
+        <button className="bg-[#0BA5E9] rounded-xl text-white w-[180px] p-2">
           {isLoading ? "계정 생성 중" : "계정 생성"}
         </button>
       </form>

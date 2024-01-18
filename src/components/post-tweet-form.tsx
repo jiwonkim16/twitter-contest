@@ -12,7 +12,7 @@ function PostTweetForm() {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  const onChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const onChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setTweet(event.target.value);
   };
   const onImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -64,9 +64,8 @@ function PostTweetForm() {
         onSubmit={onSubmit}
         className="flex flex-col gap-7 h-[70vh] items-center justify-center"
       >
-        <input
+        <textarea
           className="text-center border w-[50vw] h-[20vh]"
-          type="text"
           value={tweet}
           maxLength={180}
           placeholder="게시글 작성"

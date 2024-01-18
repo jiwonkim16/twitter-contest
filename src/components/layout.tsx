@@ -16,7 +16,7 @@ function Layout() {
   };
   return (
     <>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between ">
         <Link to="/">
           <img
             src="/twitter-contest-logo.png"

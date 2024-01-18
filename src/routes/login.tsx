@@ -56,7 +56,7 @@ function Login() {
     }
   };
   return (
-    <div className="flex items-center justify-center h-[50vh] flex-col">
+    <div className="flex items-center justify-center h-[100vh] flex-col">
       <form onSubmit={onSubmit} className="flex flex-col gap-7">
         <input
           type="text"
@@ -64,7 +64,7 @@ function Login() {
           required
           onChange={onChange}
           placeholder="아이디를 입력하세요"
-          className="border text-center"
+          className="border text-center p-1"
         />
         <input
           type="password"
@@ -72,13 +72,13 @@ function Login() {
           required
           onChange={onChange}
           placeholder="비밀번호를 입력하세요"
-          className="border text-center"
+          className="border text-center p-1"
         />
-        <button className="bg-[#00CA5B] text-white rounded-xl">
+        <button className="bg-[#00CA5B] text-white rounded-xl p-2">
           {isLoading ? "로그인 중" : "로그인"}
         </button>
         <button
-          className="flex gap-1 items-center justify-center bg-[#FA905D] text-white rounded-xl"
+          className="flex gap-1 items-center justify-center bg-[#FA905D] text-white rounded-xl p-2"
           onClick={handleGoogleLogin}
         >
           <svg
@@ -95,7 +95,7 @@ function Login() {
           onClick={() => {
             navigate("/create-account");
           }}
-          className="bg-[#80258F] text-white rounded-xl"
+          className="bg-[#80258F] text-white rounded-xl p-2"
         >
           회원가입
         </button>

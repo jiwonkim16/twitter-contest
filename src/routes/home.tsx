@@ -1,8 +1,10 @@
+import TimeLine from "../components/timeline";
+
 function Home() {
   return (
-    <>
-      <h1>Homeeeeeeee</h1>
-    </>
+    <div className="mt-[30px]">
+      <TimeLine />
+    </div>
   );
 }
 

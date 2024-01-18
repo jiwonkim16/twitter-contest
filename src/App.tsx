@@ -9,6 +9,7 @@ import Profile from "./routes/profile";
 import Login from "./routes/login";
 import CreateAccount from "./routes/create-account";
 import PostTweetForm from "./components/post-tweet-form";
+import DetailTweet from "./components/detail-tweet";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
   {
     path: "/post-tweet",
     element: <PostTweetForm />,
+  },
+  {
+    path: "/detail/:tweetId",
+    element: <DetailTweet />,
   },
 ]);
 function App() {

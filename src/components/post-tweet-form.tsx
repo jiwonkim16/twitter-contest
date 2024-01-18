@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { auth, db, storage } from "../firebase";
 import { addDoc, collection, updateDoc } from "firebase/firestore";
 import { FirebaseError } from "firebase/app";
@@ -53,9 +53,19 @@ function PostTweetForm() {
     }
   };
   return (
-    <div>
-      <form onSubmit={onSubmit}>
+    <>
+      <Link to="/">
+        <img
+          src="/twitter-contest-logo.png"
+          className="w-[130px] h-[130px] rounded-xl"
+        />
+      </Link>
+      <form
+        onSubmit={onSubmit}
+        className="flex flex-col gap-7 h-[70vh] items-center justify-center"
+      >
         <input
+          className="text-center border w-[50vw] h-[20vh]"
           type="text"
           value={tweet}
           maxLength={180}
@@ -63,10 +73,24 @@ function PostTweetForm() {
           required
           onChange={onChange}
         />
-        <input type="file" accept="image/*" onChange={onImageChange} />
-        <button>{isLoading ? "등록 중..." : "등록하기"}</button>
+        <label
+          htmlFor="img"
+          className="bg-[#FA905D] rounded-xl w-28 text-center text-white p-2"
+        >
+          {image ? "업로드 완료✅" : "이미지 등록"}
+        </label>
+        <input
+          id="img"
+          className="hidden"
+          type="file"
+          accept="image/*"
+          onChange={onImageChange}
+        />
+        <button className="bg-[#00CA5B] rounded-xl w-28 text-center text-white p-2">
+          {isLoading ? "등록 중..." : "등록하기"}
+        </button>
       </form>
-    </div>
+    </>
   );
 }
 

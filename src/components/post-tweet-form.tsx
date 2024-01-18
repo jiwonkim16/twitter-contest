@@ -1,9 +1,10 @@
 import { ChangeEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth, db } from "../firebase";
-import { addDoc, collection } from "firebase/firestore";
+import { auth, db, storage } from "../firebase";
+import { addDoc, collection, updateDoc } from "firebase/firestore";
 import { FirebaseError } from "firebase/app";
 import { toast } from "react-toastify";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
 function PostTweetForm() {
   const [tweet, setTweet] = useState("");
@@ -26,12 +27,21 @@ function PostTweetForm() {
     if (!user || isLoading || tweet === "" || tweet.length > 180) return;
     try {
       setIsLoading(true);
-      await addDoc(collection(db, "tweet"), {
+      const doc = await addDoc(collection(db, "tweet"), {
         tweet,
         createdAt: Date.now(),
         username: user.displayName || "이름 없음",
         userId: user.uid,
       });
+      if (image) {
+        const locationRef = ref(
+          storage,
+          `tweet/${user.uid}-${user.displayName}/${doc.id}`
+        );
+        const result = await uploadBytes(locationRef, image);
+        const url = await getDownloadURL(result.ref);
+        await updateDoc(doc, { image: url });
+      }
     } catch (e) {
       if (e instanceof FirebaseError) {
         toast.error(e.message);

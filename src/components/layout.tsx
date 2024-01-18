@@ -20,20 +20,20 @@ function Layout() {
         <Link to="/">
           <img
             src="/twitter-contest-logo.png"
-            className="w-[130px] h-[130px] rounded-xl"
+            className="w-[150px] h-[150px] rounded-xl"
           />
         </Link>
         <div className="flex gap-4 mr-4">
-          <button>
+          <button className="text-xl font-bold">
             <Link to="/">홈</Link>
           </button>
-          <button>
+          <button className="text-xl font-bold">
             <Link to="/post-tweet">글쓰기</Link>
           </button>
-          <button>
+          <button className="text-xl font-bold">
             <Link to="profile">프로필</Link>
           </button>
-          <button onClick={handleLogout}>
+          <button className="text-xl font-bold" onClick={handleLogout}>
             {currentUser ? "로그아웃" : "로그인"}
           </button>
         </div>

@@ -37,7 +37,7 @@ function TimeLine() {
   useEffect(() => {
     fetchTweet();
   }, []);
-  console.log(tweet);
+
   return (
     <div className="flex justify-center items-center gap-5 flex-col">
       {tweet.map((item) => (

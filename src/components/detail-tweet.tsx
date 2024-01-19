@@ -63,7 +63,10 @@ function DetailTweet() {
                 key={item.id}
                 className="flex items-center justify-center flex-col gap-5"
               >
-                <img src={item.image} className="rounded-full" />
+                <img
+                  src={item.image}
+                  className="w-[40%] h-[80%] rounded-full object-fill"
+                />
                 <div className="text-xl font-bold">{item.username}</div>
                 <div className="text-xl font-bold w-[50vw] break-words text-center">
                   {item.tweet}

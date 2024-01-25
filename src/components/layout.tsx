@@ -19,7 +19,7 @@ function Layout() {
       <div className="flex items-center justify-between ">
         <Link to="/">
           <img
-            src="/twitter-contest-logo.png"
+            src="../public/twitter-contest-logo.png"
             className="w-[150px] h-[150px] rounded-xl"
           />
         </Link>
@@ -28,7 +28,7 @@ function Layout() {
             <Link to="/">홈</Link>
           </button>
           <button className="text-xl font-bold">
-            <Link to="/post-tweet">글쓰기</Link>
+            <Link to="/post-tweet">트윗 작성</Link>
           </button>
           <button className="text-xl font-bold">
             <Link to="profile">프로필</Link>

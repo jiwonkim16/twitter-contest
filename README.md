@@ -23,4 +23,4 @@
 
 ### 🐼 최종 배포
 
-1. URL :
+1. URL : https://twitter-contest.web.app/login
